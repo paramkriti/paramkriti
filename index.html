@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🌸%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48.png">
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <title>Paramkriti – Women’s Ethnic Wear</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -20,15 +22,30 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 header{border-bottom:1px solid var(--line)}
 nav a{color:var(--hdtx);text-decoration:none;margin-left:18px;font-size:.95rem}
 nav a:hover{color:var(--mauve)}
-.hero{text-align:center;padding:96px 5vw;min-height:min(75vh,640px);display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(rgba(60,10,44,.45),rgba(60,10,44,.55)),url(images/hero.jpg) center/cover no-repeat,linear-gradient(135deg,var(--mauve),var(--plum));color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-.hero .btn{background:var(--pink);color:var(--plum);text-shadow:none}
-.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1}
-.hero p{max-width:520px;margin:14px auto 24px;font-size:1.05rem}
 .btn{display:inline-block;background:var(--plum);color:#fff;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:500;border:0;cursor:pointer;font-family:inherit;font-size:.95rem}
 section.col{padding:56px 5vw 8px;max-width:1280px;margin:auto}
 section h2{font-size:2.3rem;color:var(--plum)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) section h2{color:var(--pink)}}
 .sub{color:var(--mut);margin:4px 0 24px}
+.sr{position:absolute;left:-9999px}
+.hero img{width:100%;height:auto;display:block}
+.hero.empty{min-height:min(60vh,520px);background:linear-gradient(135deg,var(--mauve),var(--plum))}
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:1280px;margin:0 auto;padding:22px 5vw 0}
+.hl div{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 16px;font-size:.92rem;color:var(--mut)}
+.hl b{display:block;color:var(--plum);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.2rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hl b{color:var(--pink)}}
+.tag{align-self:flex-start;background:var(--line);color:var(--plum);font-size:.72rem;padding:2px 9px;border-radius:20px;font-weight:500}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--pink)}}
+.ask{font-size:.8rem;color:var(--mauve);text-decoration:underline}
+#faq{max-width:860px;margin:auto;padding:56px 5vw 0}
+details{border:1px solid var(--line);background:var(--card);border-radius:12px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--mauve);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 14px;color:var(--mut)}
+details a{color:var(--plum);font-weight:500}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) details a{color:var(--pink)}}
 .slider{position:relative}
 .grid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:thin;scrollbar-color:var(--mauve) transparent;-webkit-overflow-scrolling:touch}
 .grid .card{flex:0 0 min(250px,72vw);scroll-snap-align:start}
@@ -61,18 +78,24 @@ footer{background:#2a0a1f;color:var(--mauve);text-align:center;padding:24px 20px
 </style>
 </head>
 <body>
-<header><a href="#" class="logo" aria-label="Paramkriti home"><picture><source media="(prefers-color-scheme:dark)" srcset="images/logo-light.png"><img src="images/logo.png" alt="Paramkriti" width="800" height="130"></picture></a><nav><a href="#luxe">Luxe</a><a href="#suits">Suits</a><a href="#kurta">Kurta Sets</a><a href="#about">About</a></nav></header>
+<header><a href="#" class="logo" aria-label="Paramkriti home"><picture><source media="(prefers-color-scheme:dark)" srcset="images/logo-light.png"><img src="images/logo.png" alt="Paramkriti" width="800" height="130"></picture></a><nav><a href="#luxe">Luxe</a><a href="#suits">Suits</a><a href="#kurta">Kurta Sets</a><a href="#faq">FAQs</a><a href="#about">About</a></nav></header>
 
-<div class="hero">
-<h1>Where tradition<br>meets elegance</h1>
-<p>Handpicked ethnic wear for the modern woman. Choose your piece, pick your size, and order instantly on WhatsApp.</p>
-<a class="btn" href="#luxe">Shop collections</a>
-</div>
+<h1 class="sr">Paramkriti – Women’s Ethnic Wear</h1>
+<div class="hero"><img src="images/hero.jpg" alt="Paramkriti collection" onerror="this.parentNode.classList.add('empty');this.remove()"></div>
+<div class="hl"><div><b>100% pure cotton</b>On all our cotton styles</div><div><b>Exchange or return</b>Within 3 days of delivery</div><div><b>Delivery on WhatsApp</b>Message us for timing &amp; charges</div><div><b>Size details on WhatsApp</b>We’ll help you pick the right fit</div></div>
 
 <section class="col" id="luxe"><h2>Luxe Collection</h2><p class="sub">Statement gowns and occasion wear · 20 pieces</p><div class="grid" id="g-luxe"></div></section>
 <section class="col" id="suits"><h2>Suits</h2><p class="sub">Tailored suit sets with dupatta · 20 pieces</p><div class="grid" id="g-suits"></div></section>
 <section class="col" id="kurta"><h2>Kurta Sets</h2><p class="sub">Easy, elegant everyday sets · 20 pieces</p><div class="grid" id="g-kurta"></div></section>
 
+<section id="faq"><h2>FAQs</h2><p class="sub">Quick answers to common questions</p>
+<details><summary>What fabric are your clothes made of?</summary><p>Our cotton styles are made from 100% pure cotton. Silk and Chanderi pieces are named as such on each product. For fabric details of any piece, message us on <a href="https://wa.me/918854022234" target="_blank" rel="noopener">WhatsApp</a>.</p></details>
+<details><summary>How do I place an order?</summary><p>Pick your size on the product card and tap “Order on WhatsApp”. A message with the product, size and price opens in WhatsApp. Send it and we’ll take it from there.</p></details>
+<details><summary>How do I choose my size?</summary><p>Sizes range from XS to 6XL. For size details, message us on WhatsApp and we’ll help you find the right fit.</p></details>
+<details><summary>How does delivery work?</summary><p>Please contact us on WhatsApp for delivery details, including timing and charges for your location.</p></details>
+<details><summary>Can I exchange or return my order?</summary><p>Yes. Exchange or return is possible within 3 days of receiving your order. Message us on WhatsApp to arrange it.</p></details>
+<details><summary>How can I contact Paramkriti?</summary><p>The quickest way is WhatsApp. You can also find us on <a href="https://www.instagram.com/paramkritiofficial/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/p/Paramkriti-61587699071327/" target="_blank" rel="noopener">Facebook</a>.</p></details>
+</section>
 <section id="about"><div class="in">
 <h2>About Paramkriti</h2>
 <p>Paramkriti — a name that means a supreme creation — is built on the belief that every woman deserves clothing that feels like a work of art. We bring together graceful silhouettes, rich colour and thoughtful detailing, from festive Luxe pieces to effortless daily Kurta Sets.</p>
@@ -107,9 +130,10 @@ DATA.forEach(([c,raw,price],i)=>{cnt[c]++;
 const name=raw.charAt(0).toUpperCase()+raw.slice(1),inr="₹"+price.toLocaleString("en-IN");
 const el=document.createElement("div");el.className="card";let size="M";
 const fb=art(/kurta set/i.test(raw)?"kurta":"suits",pal(raw,i)),slug=raw.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-el.innerHTML=`<img src="images/${slug}.webp" alt="${name}" loading="lazy" width="800" height="1200"><div class="info"><h3>${name}</h3><div class="price">${inr}</div><div class="sz">${SIZES.map(s=>`<button class="${s==size?"on":""}">${s}</button>`).join("")}</div><a class="wa" target="_blank" rel="noopener">Order on WhatsApp</a></div>`;
+el.innerHTML=`<img src="images/${slug}.webp" alt="${name}" loading="lazy" width="800" height="1200"><div class="info">${/cotton/i.test(raw)&&!/silk/i.test(raw)?'<span class="tag">100% pure cotton</span>':""}<h3>${name}</h3><div class="price">${inr}</div><div class="sz">${SIZES.map(s=>`<button class="${s==size?"on":""}">${s}</button>`).join("")}</div><a class="ask" target="_blank" rel="noopener">Size details on WhatsApp</a><a class="wa" target="_blank" rel="noopener">Order on WhatsApp</a></div>`;
 el.querySelector("img").onerror=e=>{e.target.outerHTML=fb};
 const a=el.querySelector(".wa");
+const ak=el.querySelector(".ask");ak.href=`https://wa.me/${WA}?text=`+encodeURIComponent(`Hi Paramkriti! Please share size details for ${name}.`);
 const upd=()=>{a.href=`https://wa.me/${WA}?text=`+encodeURIComponent(`Hi Paramkriti! I’d like to order:\n${name} (${CN[c]})\nSize: ${size}\nPrice: ${inr}`)};
 el.querySelectorAll(".sz button").forEach(b=>b.onclick=()=>{size=b.textContent;el.querySelectorAll(".sz button").forEach(x=>x.classList.toggle("on",x==b));upd()});
 upd();document.getElementById("g-"+GID[c]).appendChild(el)});
